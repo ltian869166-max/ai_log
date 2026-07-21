@@ -35,6 +35,12 @@
   transform: translateY(-2px);
 }
 
+.skill-card:hover .skill-desc {
+  max-height: 120px;
+  opacity: 1;
+  margin-top: 10px;
+}
+
 .skill-card:active {
   transform: translateY(0) scale(0.98);
   transition-duration: 0.1s;
@@ -67,6 +73,11 @@
   color: var(--text-secondary);
   font-size: 0.85rem;
   line-height: 1.8;
+  max-height: 0;
+  overflow: hidden;
+  opacity: 0;
+  transition: max-height 0.4s ease, opacity 0.3s ease, margin-top 0.3s ease;
+  margin-top: 0;
 }
 
 /* Wide card */

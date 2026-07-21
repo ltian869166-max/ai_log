@@ -23,6 +23,16 @@
 .skill-card {
   padding: 36px 28px;
   position: relative;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  transition: border-color 0.3s ease, background 0.3s ease, transform 0.3s ease;
+}
+
+.skill-card:hover {
+  border-color: var(--accent-dim);
+  background: var(--bg-card-hover);
+  transform: translateY(-2px);
 }
 
 .skill-icon {
@@ -35,7 +45,7 @@
   justify-content: center;
   margin-bottom: 20px;
   color: var(--accent);
-  transition: all 0.3s ease;
+  transition: background 0.3s ease;
 }
 
 .skill-card:hover .skill-icon {
@@ -51,7 +61,7 @@
 .skill-desc {
   color: var(--text-secondary);
   font-size: 0.85rem;
-  line-height: 1.7;
+  line-height: 1.8;
 }
 
 /* Wide card */

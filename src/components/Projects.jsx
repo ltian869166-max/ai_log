@@ -1,6 +1,5 @@
 ﻿import { useState, useRef } from 'react';
 import './Projects.css';
-import BorderGlow from './BorderGlow';
 
 const categories = [
   '全部',
@@ -150,7 +149,7 @@ export default function Projects() {
           {categories.map((cat) => (
             <button
               key={cat}
-              className={`filter-btn ${activeCategory === cat ? 'active' : ''}`}
+              className={ilter-btn }
               onClick={() => setActiveCategory(cat)}
             >
               {cat}
@@ -161,35 +160,25 @@ export default function Projects() {
         {/* Projects Grid */}
         <div className="project-grid" ref={gridRef}>
           {filteredProjects.map((project, index) => (
-            <BorderGlow
+            <div
               key={project.id}
-              borderRadius={12}
-              backgroundColor="#121216"
-              glowColor="80 100 50"
-              colors={['#CCFF00', '#00d4ff', '#7b2ff7']}
-              edgeSensitivity={20}
-              glowRadius={24}
-              glowIntensity={0.6}
+              className="project-card"
+              data-animate-project
+              style={{ '--delay': ${index * 0.08}s }}
             >
-              <div
-                className="project-card"
-                data-animate-project
-                style={{ '--delay': `${index * 0.08}s` }}
-              >
-                <div className="project-card-image">
-                  <img src={project.image} alt={project.title} loading="lazy" />
-                  <div className="project-card-overlay">
-                    <div className="project-card-category">{project.category}</div>
-                    <h3 className="project-card-title">{project.title}</h3>
-                    <div className="project-card-tags">
-                      {project.tags.map((tag) => (
-                        <span key={tag} className="project-tag-pill">{tag}</span>
-                      ))}
-                    </div>
+              <div className="project-card-image">
+                <img src={project.image} alt={project.title} loading="lazy" />
+                <div className="project-card-overlay">
+                  <div className="project-card-category">{project.category}</div>
+                  <h3 className="project-card-title">{project.title}</h3>
+                  <div className="project-card-tags">
+                    {project.tags.map((tag) => (
+                      <span key={tag} className="project-tag-pill">{tag}</span>
+                    ))}
                   </div>
                 </div>
               </div>
-            </BorderGlow>
+            </div>
           ))}
         </div>
       </div>

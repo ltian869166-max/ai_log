@@ -1,4 +1,5 @@
 ﻿import './About.css';
+import aboutImg from '../assets/about-character.webp';
 
 export default function About() {
   return (
@@ -20,7 +21,7 @@ export default function About() {
           {/* --- Left: Character Card --- */}
           <div className="about-character-card" data-animate-about="card">
             <div className="about-character-img">
-              <img src="/src/assets/about-character.webp" alt="LinT Character" className="about-character-img-src" loading="lazy" />
+              <img src={aboutImg} alt="LinT Character" className="about-character-img-src" loading="lazy" />
             </div>
             <div className="about-character-tag">UI design &amp; AI Design</div>
           </div>

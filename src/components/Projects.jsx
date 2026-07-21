@@ -137,12 +137,12 @@ export default function Projects() {
     : projects.filter((p) => p.category === activeCategory);
 
   return (
-    <section id="projects" className="projects-section">
+    <section id="projects" className="projects-section" aria-labelledby="projects-title">
       <div className="container">
         <div className="projects-header">
           <div className="section-label">Selected Works</div>
-          <div className="section-title">��ѡ��Ŀ</div>
-        </div>
+          <h2 className="section-title" id="projects-title">��ѡ��Ŀ</div>
+        </h2>
 
         {/* Category Filter */}
         <div className="project-filters">

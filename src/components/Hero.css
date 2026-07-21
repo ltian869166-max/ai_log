@@ -48,7 +48,8 @@
   margin-bottom: 16px;
 }
 
-.hero-name {
+.hero-name,
+h1.hero-name {
   font-family: var(--font-heading);
   font-size: clamp(3rem, 8vw, 6rem);
   font-weight: 700;
@@ -171,7 +172,8 @@
   .hero-content {
     min-height: 100dvh;
   }
-  .hero-name {
+  .hero-name,
+h1.hero-name {
     font-size: clamp(2.5rem, 12vw, 4rem);
   }
   .hero-actions {

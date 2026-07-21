@@ -43,11 +43,11 @@ const skills = [
 
 export default function Skills() {
   return (
-    <section id="skills" className="skills-section">
+    <section id="skills" className="skills-section" aria-labelledby="skills-title">
       <div className="container">
         <div className="skills-header">
           <div className="section-label">Expertise</div>
-          <div className="section-title">个人优势</div>
+          <h2 className="section-title" id="skills-title">个人优势</div>
           <p className="section-subtitle">
             从全流程能力到持续学习，用设计的专业度与广度，为每个项目带来独特的价值。
           </p>

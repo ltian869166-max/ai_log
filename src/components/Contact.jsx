@@ -2,9 +2,9 @@
 
 export default function Contact() {
   return (
-    <section id="contact" className="contact-section">
+    <section id="contact" className="contact-section" aria-labelledby="contact-title">
       {/* Background */}
-      <div className="contact-bg">
+      <div className="contact-bg" aria-hidden="true">
         <div className="contact-bg-glow contact-bg-glow-1" />
         <div className="contact-bg-glow contact-bg-glow-2" />
       </div>
@@ -15,7 +15,7 @@ export default function Contact() {
           <div className="contact-left">
             <div className="contact-top">
               <div className="contact-label">联系方式</div>
-              <h2 className="contact-title">
+              <h2 className="contact-title" id="contact-title">
                 THANKS FOR<br />
                 WATCHING
               </h2>

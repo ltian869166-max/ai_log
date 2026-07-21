@@ -3,12 +3,12 @@
 export default function Hero() {
   return (
     <section id="hero" className="hero-section">
-      <div className="hero-bg" />
-      <div className="hero-overlay" />
+      <div className="hero-bg" aria-hidden="true" />
+      <div className="hero-overlay" aria-hidden="true" />
 
       <div className="container hero-content">
         <div className="hero-main-title" data-hero="title">
-          <span className="hero-name">LINTIAN</span>
+          <h1 className="hero-name">LINTIAN</h1>
         </div>
 
         <div className="hero-sub-title" data-hero="subtitle">

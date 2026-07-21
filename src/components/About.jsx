@@ -2,13 +2,13 @@
 
 export default function About() {
   return (
-    <section id="about" className="about-section">
+    <section id="about" className="about-section" aria-labelledby="about-title">
       <div className="container">
 
         {/* ===== Section Title ===== */}
         <div className="about-title-area about-header">
           <div className="about-title-row">
-            <h2 className="about-main-title">WORK EXPERIENCE</h2>
+            <h2 className="about-main-title" id="about-title">WORK EXPERIENCE</h2>
             <span className="about-title-arrow">↘</span>
           </div>
           <p className="about-title-sub">个人经历</p>

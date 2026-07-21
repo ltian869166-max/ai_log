@@ -22,7 +22,7 @@ export default function Navbar() {
   const handleNavClick = () => setMenuOpen(false);
 
   return (
-    <nav className={`navbar${scrolled ? ' scrolled' : ''}${menuOpen ? ' menu-open' : ''}`}>
+    <nav role="navigation" aria-label="主导航" className={`navbar${scrolled ? ' scrolled' : ''}${menuOpen ? ' menu-open' : ''}`}>
       <div className="container">
         <div className="navbar-left">
           <a href="#hero" className="navbar-logo">

@@ -31,8 +31,9 @@ function App() {
 
   return (
     <>
+      <a href="#main-content" className="skip-link">跳到主要内容</a>
       <Navbar />
-      <main>
+      <main id="main-content" role="main">
         <Hero />
         <Suspense fallback={null}>
           <About />

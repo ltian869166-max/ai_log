@@ -101,6 +101,19 @@
   transform: scale(1.08);
 }
 
+/* ===== Image-based visual ===== */
+.skill-visual-img {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.skill-visual-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  border-radius: 12px;
+}
+
 /* ===== 3D Glass Sphere ===== */
 .skill-visual-sphere {
   display: flex;

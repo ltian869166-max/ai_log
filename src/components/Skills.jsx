@@ -1,4 +1,5 @@
 ﻿import './Skills.css';
+import skillSphereImg from '../assets/skill-sphere.png';
 
 const skills = [
   {
@@ -7,6 +8,7 @@ const skills = [
     title: '全流程能力',
     desc: '从需求分析、视觉设计到开发落地，独立负责项目全流程，确保设计从概念到交付的高质量呈现。',
     shape: 'sphere',
+    image: skillSphereImg,
   },
   {
     num: '02',
@@ -62,7 +64,13 @@ export default function Skills() {
                 <span className="skill-tag">{skill.tag}</span>
               </div>
               <h3 className="skill-title">{skill.title}</h3>
-              <div className={`skill-visual skill-visual-${skill.shape}`} aria-hidden="true" />
+              {skill.image ? (
+                <div className="skill-visual skill-visual-img" aria-hidden="true">
+                  <img src={skill.image} alt="" />
+                </div>
+              ) : (
+                <div className={`skill-visual skill-visual-${skill.shape}`} aria-hidden="true" />
+              )}
               <p className="skill-desc">{skill.desc}</p>
             </div>
           ))}

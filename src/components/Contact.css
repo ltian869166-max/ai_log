@@ -1,4 +1,4 @@
-﻿/* ===== Contact Section ===== */
+/* ===== Contact Section ===== */
 .contact-section {
   position: relative;
   width: 100%;
@@ -121,7 +121,7 @@
   letter-spacing: 1px;
 }
 
-/* ===== Right Side — Glass Card ===== */
+/* ===== Right Side �?Glass Card ===== */
 .contact-right {
   flex: 0 0 380px;
   display: flex;
@@ -202,7 +202,7 @@
 
 .glass-card-btn {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   justify-content: center;
   gap: 8px;
   width: 100%;
@@ -229,23 +229,7 @@
   transition-duration: 0.1s;
 }
 
-/* ===== Footer ===== */
-.contact-footer {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  z-index: var(--z-content);
-  text-align: center;
-  padding: 24px 0;
-}
-
-.contact-footer p {
-  font-size: 0.8rem;
-  color: var(--text-muted);
-}
-
-/* ===== Responsive ===== */
+/* ===== Responsive ===== *//* ===== Responsive ===== */
 @media (max-width: 1200px) {
   .contact-split {
     gap: 48px;

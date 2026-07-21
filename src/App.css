@@ -231,3 +231,15 @@
     display: none;
   }
 }
+/* ===== Site Footer ===== */
+.site-footer {
+  text-align: center;
+  padding: 24px 0;
+  background: var(--bg-primary);
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.site-footer p {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+}

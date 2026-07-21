@@ -42,6 +42,9 @@ function App() {
           <Contact />
         </Suspense>
       </main>
+      <footer className="site-footer">
+        <p>&copy; 2026 林甜. All rights reserved.</p>
+      </footer>
     </>
   );
 }

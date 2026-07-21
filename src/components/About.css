@@ -99,7 +99,7 @@
   font-size: 0.65rem;
   font-weight: 600;
   letter-spacing: 3px;
-  color: #CCFF00;
+  color: var(--accent-secondary);
   text-transform: uppercase;
   margin-bottom: 12px;
 }
@@ -116,7 +116,7 @@
 .about-info-bio {
   font-size: 0.85rem;
   color: #888899;
-  line-height: 1.7;
+  line-height: 1.8;
   letter-spacing: 0.3px;
   margin-bottom: 32px;
   max-width: 560px;
@@ -140,7 +140,7 @@
   font-size: 0.6rem;
   font-weight: 600;
   letter-spacing: 2px;
-  color: #CCFF00;
+  color: var(--accent-secondary);
   text-transform: uppercase;
 }
 
@@ -173,7 +173,7 @@
 
 .about-stat-lbl {
   font-size: 0.65rem;
-  color: #888899;
+  color: var(--text-secondary);
   letter-spacing: 1px;
   text-transform: uppercase;
 }
@@ -255,7 +255,7 @@
 .about-tl-date {
   display: block;
   font-size: 0.75rem;
-  color: #CCFF00;
+  color: var(--accent-secondary);
   letter-spacing: 1px;
   font-feature-settings: "tnum";
   margin-bottom: 8px;
@@ -273,8 +273,8 @@
   display: inline-block;
   font-size: 0.7rem;
   font-weight: 500;
-  color: #CCFF00;
-  border: 1px solid rgba(204, 255, 0, 0.4);
+  color: var(--accent-secondary);
+  border: 1px solid rgba(0, 212, 255, 0.3);
   padding: 3px 14px;
   border-radius: 16px;
   letter-spacing: 0.5px;

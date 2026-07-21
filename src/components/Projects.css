@@ -105,6 +105,10 @@
   color: var(--accent);
   margin-bottom: 6px;
 }
+/* Category label uses secondary accent for hierarchy */
+.project-card-category {
+  color: var(--accent-secondary);
+}
 
 .project-card-title {
   font-size: 1.05rem;

@@ -1,0 +1,66 @@
+﻿.strengths {
+  position: relative;
+}
+
+.strengths-header {
+  margin-bottom: 60px;
+}
+
+.strengths-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+/* BorderGlow wrapper for strength cards */
+.strengths-grid .border-glow-card {
+  padding: 36px 32px;
+  cursor: pointer;
+}
+
+.strengths-grid .border-glow-card:hover {
+  transform: translateY(-2px);
+}
+
+.strength-icon {
+  width: 52px;
+  height: 52px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--accent-dim);
+  border-radius: var(--radius-sm);
+  margin-bottom: 20px;
+  color: var(--accent);
+  transition: all 0.3s ease;
+}
+
+.strengths-grid .border-glow-card:hover .strength-icon {
+  background: var(--accent);
+  color: #050505;
+}
+
+.strength-title {
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 10px;
+  color: var(--color-warm);
+}
+
+.strength-desc {
+  font-size: 14px;
+  color: var(--text-tertiary);
+  line-height: 1.7;
+}
+
+@media (max-width: 1024px) {
+  .strengths-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .strengths-grid {
+    grid-template-columns: 1fr;
+  }
+}

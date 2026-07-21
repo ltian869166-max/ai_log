@@ -1,0 +1,114 @@
+@import './utils/animations.css';
+
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --bg-primary: #0f1625;
+  --bg-secondary: #141c2d;
+  --bg-card: #1a2336;
+  --bg-card-hover: #1f2a42;
+  --border-color: #1e2a40;
+  --border-light: #25304a;
+  --text-primary: #e4dbd9;
+  --text-secondary: rgba(228, 219, 217, 0.6);
+  --text-tertiary: rgba(228, 219, 217, 0.35);
+  --accent: #CCFF00;
+  --accent-dim: rgba(204, 255, 0, 0.10);
+  --accent-glow: rgba(204, 255, 0, 0.04);
+  --gradient-accent: linear-gradient(135deg, #CCFF00, #a6d400);
+  --glass-bg: rgba(228, 219, 217, 0.03);
+  --glass-border: rgba(228, 219, 217, 0.05);
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 16px;
+  --radius-xl: 24px;
+  --container: 1700px;
+  --nav-height: 72px;
+  --color-warm: #e4dbd9;
+  --color-warm-dim: rgba(228, 219, 217, 0.06);
+  --color-warm-light: rgba(228, 219, 217, 0.03);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Noto Sans SC', 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+}
+
+::selection {
+  background: var(--accent-dim);
+  color: var(--color-warm);
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+.container {
+  max-width: var(--container);
+  margin: 0 auto;
+  padding: 0 40px;
+}
+
+.section {
+  padding: 120px 0;
+}
+
+.section-header {
+  margin-bottom: 60px;
+}
+
+.section-subtitle {
+  font-size: 13px;
+  color: var(--text-secondary);
+  font-weight: 300;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-bottom: 8px;
+}
+
+.section-title {
+  font-size: 38px;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  margin-bottom: 16px;
+  color: var(--color-warm);
+  line-height: 1.2;
+}
+
+.section-desc {
+  font-size: 15px;
+  color: var(--text-tertiary);
+  max-width: 600px;
+  line-height: 1.8;
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding: 0 20px;
+  }
+  .section {
+    padding: 80px 0;
+  }
+  .section-title {
+    font-size: 28px;
+  }
+}

@@ -1,0 +1,290 @@
+/* ============================================
+   Animation System  v2  ！  GSAP-style CSS
+   Dramatic reveals, smooth power-easings
+   ============================================ */
+
+/* ---- GSAP-style easing curves ---- */
+:root {
+  --ease-power1-out: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  --ease-power2-out: cubic-bezier(0.22, 1, 0.36, 1);
+  --ease-power3-out: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-power4-out: cubic-bezier(0.13, 1, 0.22, 1);
+  --ease-power1-inOut: cubic-bezier(0.65, 0, 0.35, 1);
+  --ease-power2-inOut: cubic-bezier(0.87, 0, 0.13, 1);
+  --ease-expo-out: cubic-bezier(0.19, 1, 0.22, 1);
+  --duration-slow: 1.6s;
+  --duration-med: 1.2s;
+  --duration-fast: 0.8s;
+}
+
+/* ---- State classes ---- */
+.anim-hidden {
+  opacity: 0 !important;
+  pointer-events: none !important;
+}
+.anim-visible {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+/* ============================================
+   CLIP REVEALS ！ dramatic mask-style entrances
+   ============================================ */
+
+/* Clip from left (section titles) */
+.anim-clip-left {
+  clip-path: inset(0 0% 0 0);
+  transition: clip-path var(--duration-slow) var(--ease-power2-inOut);
+}
+.anim-clip-left.anim-hidden {
+  clip-path: inset(0 100% 0 0);
+}
+
+/* Clip from right */
+.anim-clip-right {
+  clip-path: inset(0 0% 0 0);
+  transition: clip-path var(--duration-slow) var(--ease-power2-inOut);
+}
+.anim-clip-right.anim-hidden {
+  clip-path: inset(0 0% 0 100%);
+}
+
+/* Clip from top */
+.anim-clip-top {
+  clip-path: inset(0 0% 0 0);
+  transition: clip-path var(--duration-slow) var(--ease-power2-inOut);
+}
+.anim-clip-top.anim-hidden {
+  clip-path: inset(100% 0% 0 0);
+}
+
+/* Clip from bottom */
+.anim-clip-bottom {
+  clip-path: inset(0 0% 0 0);
+  transition: clip-path var(--duration-slow) var(--ease-power2-inOut);
+}
+.anim-clip-bottom.anim-hidden {
+  clip-path: inset(0 0% 100% 0);
+}
+
+/* Clip diagonal (from bottom-left to top-right) */
+.anim-clip-diag {
+  clip-path: polygon(0 0%, 100% 0%, 100% 100%, 0% 100%);
+  transition: clip-path var(--duration-slow) var(--ease-power2-inOut);
+}
+.anim-clip-diag.anim-hidden {
+  clip-path: polygon(0 100%, 100% 0%, 100% 0%, 0% 100%);
+}
+
+/* ============================================
+   MASK REVEALS ！ text/image reveals via mask
+   ============================================ */
+
+.anim-mask-left {
+  -webkit-mask: linear-gradient(90deg, #000 0%, #000 100%);
+  -webkit-mask-composite: source-in;
+  mask: linear-gradient(90deg, #000 0%, #000 100%);
+  transition: -webkit-mask-size var(--duration-slow) var(--ease-power2-inOut),
+              mask-size var(--duration-slow) var(--ease-power2-inOut);
+  -webkit-mask-size: 100% 100%;
+  mask-size: 100% 100%;
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
+}
+.anim-mask-left.anim-hidden {
+  -webkit-mask-size: 0% 100%;
+  mask-size: 0% 100%;
+}
+
+/* ============================================
+   STRONG SLIDE UPS ！ dramatic vertical enters
+   ============================================ */
+
+/* Heavy slide ！ 120px, power3 easing */
+.anim-slide-up-heavy {
+  transform: translateY(0);
+  opacity: 1;
+  transition:
+    transform var(--duration-slow) var(--ease-power3-out),
+    opacity var(--duration-med) var(--ease-power2-out);
+}
+.anim-slide-up-heavy.anim-hidden {
+  transform: translateY(120px);
+  opacity: 0;
+}
+
+/* Slide up with skew */
+.anim-slide-skew {
+  transform: translateY(0) skewX(0deg);
+  opacity: 1;
+  transition:
+    transform var(--duration-slow) var(--ease-power3-out),
+    opacity var(--duration-med) var(--ease-power2-out);
+}
+.anim-slide-skew.anim-hidden {
+  transform: translateY(80px) skewX(-8deg);
+  opacity: 0;
+}
+
+/* ============================================
+   ZOOM + BLUR ！ cinematic scale entrance
+   ============================================ */
+
+.anim-zoom-in {
+  transform: scale(1);
+  opacity: 1;
+  filter: blur(0px);
+  transition:
+    transform var(--duration-slow) var(--ease-power3-out),
+    opacity var(--duration-med) var(--ease-power2-out),
+    filter var(--duration-slow) var(--ease-power3-out);
+}
+.anim-zoom-in.anim-hidden {
+  transform: scale(0.7);
+  opacity: 0;
+  filter: blur(8px);
+}
+
+/* ============================================
+   STRETCH / SQUASH ！ compression release
+   ============================================ */
+
+.anim-stretch-in {
+  transform: scale(1, 1);
+  opacity: 1;
+  transition:
+    transform var(--duration-slow) var(--ease-expo-out),
+    opacity var(--duration-fast) var(--ease-power2-out);
+}
+.anim-stretch-in.anim-hidden {
+  transform: scale(1, 0.15);
+  opacity: 0;
+}
+
+/* Stretch from X (squash horizontally) */
+.anim-stretch-x {
+  transform: scale(1, 1);
+  opacity: 1;
+  transition:
+    transform var(--duration-slow) var(--ease-expo-out),
+    opacity var(--duration-fast) var(--ease-power2-out);
+}
+.anim-stretch-x.anim-hidden {
+  transform: scale(0.15, 1);
+  opacity: 0;
+}
+
+/* ============================================
+   FADE IN with blur ！ soft cinematic
+   ============================================ */
+
+.anim-blur-in {
+  opacity: 1;
+  filter: blur(0px);
+  transition:
+    opacity var(--duration-med) var(--ease-power2-out),
+    filter var(--duration-med) var(--ease-power2-out);
+}
+.anim-blur-in.anim-hidden {
+  opacity: 0;
+  filter: blur(6px);
+}
+
+/* ============================================
+   STAGGER ITEMS ！ for staggered children
+   ============================================ */
+
+.anim-stagger-item {
+  transition:
+    transform var(--duration-med) var(--ease-power3-out),
+    opacity var(--duration-med) var(--ease-power2-out);
+}
+.anim-stagger-item.anim-hidden {
+  transform: translateY(60px);
+  opacity: 0;
+}
+.anim-stagger-item.anim-visible {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+/* Heavy variant */
+.anim-stagger-heavy.anim-hidden {
+  transform: translateY(100px) scale(0.95);
+  opacity: 0;
+}
+.anim-stagger-heavy.anim-visible {
+  transform: translateY(0) scale(1);
+  opacity: 1;
+}
+
+/* ============================================
+   IMAGE REVEAL ！ parent overlay slides away
+   ============================================ */
+
+.anim-img-reveal-wrapper {
+  position: relative;
+  overflow: hidden;
+}
+.anim-img-reveal-wrapper::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: var(--bg-primary, #0f1625);
+  z-index: 2;
+  transform: translateX(0%);
+  transition: transform var(--duration-slow) var(--ease-power2-inOut);
+}
+.anim-img-reveal-wrapper.anim-visible::after {
+  transform: translateX(101%);
+}
+
+/* ============================================
+   PARALLAX ！ data attribute driven
+   ============================================ */
+
+[data-parallax] {
+  will-change: transform;
+}
+
+/* ============================================
+   UTILITY ！ for inline-block section titles
+   ============================================ */
+
+.section-title.anim-clip-left,
+.section-title.anim-clip-right,
+.section-title.anim-clip-top {
+  display: inline-block;
+}
+
+/* ============================================
+   HERO DEDICATED ANIMATIONS (applied via JS)
+   ============================================ */
+
+/* For JS-driven clip reveal on hero text */
+.hero-title-clip {
+  clip-path: inset(0 0% 0 0);
+  transition: clip-path 1.8s var(--ease-power2-inOut);
+}
+
+/* Compression + release for hero name */
+@keyframes heroCompressRelease {
+  0% { transform: scale(1, 0.05); opacity: 0; filter: blur(12px); }
+  40% { transform: scale(1, 1.08); opacity: 1; filter: blur(0px); }
+  60% { transform: scale(1, 0.97); opacity: 1; filter: blur(0px); }
+  80% { transform: scale(1, 1.02); opacity: 1; filter: blur(0px); }
+  100% { transform: scale(1, 1); opacity: 1; filter: blur(0px); }
+}
+
+.hero-stretch-title {
+  animation: heroCompressRelease 2s var(--ease-power3-out) forwards;
+}
+
+/* Glow sweep for hero subtitle */
+@keyframes glowSweep {
+  0% { background-position: 200% center; }
+  100% { background-position: -200% center; }
+}

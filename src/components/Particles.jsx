@@ -107,6 +107,8 @@ const Particles = ({
     const container = containerRef.current;
     if (!container) return;
 
+    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
     const renderer = new Renderer({
       dpr: pixelRatio,
       depth: false,
@@ -190,7 +192,7 @@ const Particles = ({
       animationFrameId = requestAnimationFrame(update);
       const delta = t - lastTime;
       lastTime = t;
-      elapsed += delta * speed;
+      if (!prefersReducedMotion) elapsed += delta * speed;
 
       program.uniforms.uTime.value = elapsed * 0.001;
 
@@ -203,9 +205,11 @@ const Particles = ({
       }
 
       if (!disableRotation) {
-        particles.rotation.x = Math.sin(elapsed * 0.0002) * 0.1;
-        particles.rotation.y = Math.cos(elapsed * 0.0005) * 0.15;
-        particles.rotation.z += 0.01 * speed;
+        if (!prefersReducedMotion) {
+          particles.rotation.x = Math.sin(elapsed * 0.0002) * 0.1;
+          particles.rotation.y = Math.cos(elapsed * 0.0005) * 0.15;
+          particles.rotation.z += 0.01 * speed;
+        }
       }
 
       renderer.render({ scene: particles, camera });

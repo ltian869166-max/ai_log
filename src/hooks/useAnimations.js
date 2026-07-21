@@ -6,6 +6,13 @@ gsap.registerPlugin(ScrollTrigger);
 
 export default function useAnimations() {
   useEffect(() => {
+    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (prefersReducedMotion) {
+      // Skip all animations when user prefers reduced motion
+      requestAnimationFrame(() => ScrollTrigger.refresh());
+      return;
+    }
+
     const hero = document.querySelector("#hero");
     if (!hero) return;
 

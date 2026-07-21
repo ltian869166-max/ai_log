@@ -25,6 +25,8 @@ const Prism = ({
     const container = containerRef.current;
     if (!container) return;
 
+    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
     const H = Math.max(0.001, height);
     const BW = Math.max(0.001, baseWidth);
     const BASE_HALF = BW * 0.5;
@@ -386,14 +388,14 @@ const Prism = ({
     if (suspendWhenOffscreen) {
       const io = new IntersectionObserver(entries => {
         const vis = entries.some(e => e.isIntersecting);
-        if (vis) startRAF();
+        if (vis && !prefersReducedMotion) startRAF();
         else stopRAF();
       });
       io.observe(container);
-      startRAF();
+      if (!prefersReducedMotion) startRAF();
       container.__prismIO = io;
     } else {
-      startRAF();
+      if (!prefersReducedMotion) startRAF();
     }
 
     return () => {

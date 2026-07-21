@@ -28,9 +28,9 @@
   z-index: 1;
   background: linear-gradient(
     180deg,
-    rgba(5, 5, 16, 0.4) 0%,
-    rgba(5, 5, 16, 0.6) 50%,
-    rgba(5, 5, 16, 0.95) 100%
+    rgba(5, 5, 16, 0.1) 0%,
+    rgba(5, 5, 16, 0.3) 50%,
+    rgba(5, 5, 16, 0.7) 100%
   );
 }
 
@@ -38,7 +38,7 @@
 .hero-content {
   position: relative;
   z-index: 2;
-  display: flex;
+  display: none;
   flex-direction: column;
   justify-content: center;
   min-height: 100dvh;

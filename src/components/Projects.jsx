@@ -163,9 +163,9 @@ export default function Projects() {
             <div
               key={project.id}
               className="project-card"
-              data-animate-project
-              style={{ '--delay': ${index * 0.08}s }}
-            >
+             data-animate-project
+              style={{ '--delay': `${index * 0.08}s` }}
+           >
               <div className="project-card-image">
                 <img src={project.image} alt={project.title} loading="lazy" />
                 <div className="project-card-overlay">

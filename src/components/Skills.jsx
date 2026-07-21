@@ -1,5 +1,6 @@
 ﻿import './Skills.css';
 import skillSphereImg from '../assets/skill-sphere.png';
+import skillGridImg from '../assets/skill-grid.png';
 
 const skills = [
   {
@@ -16,6 +17,7 @@ const skills = [
     title: '规范意识',
     desc: '擅长建立设计规范和组件库，统一品牌视觉体系，提升团队协作效率和设计输出的一致性。',
     shape: 'grid',
+    image: skillGridImg,
   },
   {
     num: '03',

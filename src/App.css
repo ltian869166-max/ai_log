@@ -4,7 +4,7 @@
   top: 0;
   left: 0;
   right: 0;
-  z-index: 1000;
+  z-index: var(--z-nav);
   height: var(--nav-height);
   background: rgba(0, 0, 0, 0.3);
   backdrop-filter: blur(10px);
@@ -83,6 +83,28 @@
   color: var(--accent);
 }
 
+/* Active nav link indicator */
+.navbar-center a.active {
+  color: var(--accent);
+}
+
+.navbar-center a::after {
+  content: "";
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: var(--accent);
+  transition: width 0.3s ease;
+}
+
+.navbar-center a:hover::after,
+.navbar-center a.active::after {
+  width: 100%;
+}
+
+
 /* Right: Contact Button */
 .navbar-right {
   flex: 0 0 auto;
@@ -137,7 +159,7 @@
   background: none;
   border: none;
   cursor: pointer;
-  z-index: 1001;
+  z-index: calc(var(--z-modal) + 1);
 }
 
 .hamburger-line {
@@ -174,7 +196,7 @@
   align-items: center;
   justify-content: center;
   gap: 32px;
-  z-index: 999;
+  z-index: var(--z-modal);
   opacity: 0;
   pointer-events: none;
   transition: opacity 0.3s ease;

@@ -47,7 +47,7 @@ export default function Skills() {
       <div className="container">
         <div className="skills-header">
           <div className="section-label">Expertise</div>
-          <h2 className="section-title" id="skills-title">个人优势</div>
+          <h2 className="section-title" id="skills-title">个人优势</h2>
           <p className="section-subtitle">
             从全流程能力到持续学习，用设计的专业度与广度，为每个项目带来独特的价值。
           </p>

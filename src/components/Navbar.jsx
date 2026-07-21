@@ -1,13 +1,33 @@
-﻿import { useState, useEffect } from 'react';
+﻿import { useState, useEffect, useRef } from 'react';
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
+  const [activeSection, setActiveSection] = useState('');
   const [menuOpen, setMenuOpen] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 20);
     window.addEventListener('scroll', handleScroll, { passive: true });
     return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+
+  useEffect(() => {
+    const sections = ['about', 'projects', 'skills', 'contact'];
+    const handleScrollSpy = () => {
+      const scrollY = window.scrollY + 100;
+      for (let i = sections.length - 1; i >= 0; i--) {
+        const el = document.getElementById(sections[i]);
+        if (el && el.offsetTop <= scrollY) {
+          setActiveSection(sections[i]);
+          return;
+        }
+      }
+      setActiveSection('');
+    };
+    window.addEventListener('scroll', handleScrollSpy, { passive: true });
+    handleScrollSpy();
+    return () => window.removeEventListener('scroll', handleScrollSpy);
   }, []);
 
   useEffect(() => {
@@ -37,9 +57,9 @@ export default function Navbar() {
         </div>
 
         <div className="navbar-center">
-          <a href="#about" onClick={handleNavClick}>工作经历</a>
-          <a href="#projects" onClick={handleNavClick}>精选作品</a>
-          <a href="#skills" onClick={handleNavClick}>个人优势</a>
+          <a href="#about" onClick={handleNavClick} className={activeSection === "about" ? "active" : ""}>工作经历</a>
+          <a href="#projects" onClick={handleNavClick} className={activeSection === "projects" ? "active" : ""}>精选作品</a>
+          <a href="#skills" onClick={handleNavClick} className={activeSection === "skills" ? "active" : ""}>个人优势</a>
         </div>
 
         <div className="navbar-right">

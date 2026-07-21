@@ -145,7 +145,7 @@ h1.hero-name {
 /* ===== Scroll Hint ===== */
 .hero-scroll-hint {
   position: absolute;
-  bottom: 40px;
+  bottom: calc(40px + env(safe-area-inset-bottom, 0px));
   left: 50%;
   transform: translateX(-50%);
   display: flex;

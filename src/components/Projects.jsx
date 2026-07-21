@@ -141,8 +141,9 @@ export default function Projects() {
       <div className="container">
         <div className="projects-header">
           <div className="section-label">Selected Works</div>
-          <h2 className="section-title" id="projects-title">��ѡ��Ŀ</div>
-        </h2>
+          <h2 className="section-title" id="projects-title">��ѡ��Ŀ</h2>
+        </div>
+
 
         {/* Category Filter */}
         <div className="project-filters">

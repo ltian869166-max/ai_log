@@ -231,7 +231,7 @@
 /* ===== Footer ===== */
 .contact-footer {
   position: relative;
-  z-index: 2;
+  z-index: var(--z-content);
   text-align: center;
   padding-top: 48px;
 }

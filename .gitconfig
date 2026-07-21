@@ -4,3 +4,5 @@
 [user]
 	name = lintian
 	email = 1017309544@qq.com
+[core]
+	sshCommand = ssh -o StrictHostKeyChecking=no

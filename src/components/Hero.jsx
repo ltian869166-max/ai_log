@@ -4,7 +4,6 @@ export default function Hero() {
   return (
     <section id="hero" className="hero-section">
       <div className="hero-bg" aria-hidden="true" />
-      <div className="hero-overlay" aria-hidden="true" />
 
       <div className="container hero-content">
         <div className="hero-main-title" data-hero="title">

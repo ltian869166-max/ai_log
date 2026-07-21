@@ -52,6 +52,7 @@
 
 /* ===== Project Card ===== */
 .project-card {
+  touch-action: manipulation;
   position: relative;
   overflow: hidden;
   border-radius: var(--radius-md);
@@ -154,6 +155,25 @@
     padding-bottom: 8px;
   }
   .project-card {
+  touch-action: manipulation;
     aspect-ratio: 16 / 10;
+  }
+}
+
+/* Mobile: show card info without hover (touch-friendly) */
+@media (max-width: 768px) {
+  .project-card-overlay {
+    opacity: 1;
+    background: linear-gradient(
+      180deg,
+      transparent 50%,
+      rgba(8, 8, 10, 0.85) 100%
+    );
+  }
+  .project-card:active {
+    transform: scale(0.98);
+  }
+  .project-card:active .project-card-image img {
+    transform: scale(1.02);
   }
 }

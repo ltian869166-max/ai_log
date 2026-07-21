@@ -110,6 +110,11 @@ h1.hero-name {
   transform: translateY(-1px);
 }
 
+.hero-cta-primary:active {
+  transform: translateY(0) scale(0.97);
+  opacity: 0.8;
+}
+
 .hero-cta-secondary {
   display: inline-flex;
   align-items: center;
@@ -130,6 +135,10 @@ h1.hero-name {
   border-color: var(--accent);
   color: var(--accent);
   background: var(--accent-dim);
+}
+
+.hero-cta-secondary:active {
+  transform: scale(0.97);
 }
 
 /* ===== Scroll Hint ===== */

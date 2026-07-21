@@ -252,6 +252,11 @@
   background: rgba(22, 22, 28, 0.9);
 }
 
+.about-tl-node-card:active {
+  transform: scale(0.99);
+  transition-duration: 0.1s;
+}
+
 .about-tl-date {
   display: block;
   font-size: 0.75rem;

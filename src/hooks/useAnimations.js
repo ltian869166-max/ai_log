@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+﻿import { useEffect } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
@@ -7,41 +7,44 @@ gsap.registerPlugin(ScrollTrigger);
 export default function useAnimations() {
   useEffect(() => {
     const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+    /* ===== Hero Entrance ===== */
+    const hero = document.querySelector("#hero");
+    if (hero) {
+      const heroTitle = hero.querySelector(".hero-main-title");
+      const heroSub = hero.querySelector(".hero-sub-title");
+      const heroTaglines = hero.querySelector(".hero-taglines");
+      const heroActions = hero.querySelector(".hero-actions");
+      const heroScroll = hero.querySelector(".hero-scroll-hint");
+
+      if (!prefersReducedMotion) {
+        const tl = gsap.timeline({ defaults: { ease: "power3.out" } });
+
+        if (heroTitle) gsap.set(heroTitle, { y: 60, opacity: 0 });
+        if (heroSub) gsap.set(heroSub, { x: -60, opacity: 0 });
+        if (heroTaglines) gsap.set(heroTaglines, { y: 20, opacity: 0 });
+        if (heroActions) gsap.set(heroActions, { y: 30, opacity: 0 });
+        if (heroScroll) gsap.set(heroScroll, { opacity: 0 });
+
+        if (heroTitle) tl.to(heroTitle, { y: 0, opacity: 1, duration: 0.8 }, 0.2);
+        if (heroSub) tl.to(heroSub, { x: 0, opacity: 1, duration: 0.6 }, 0.5);
+        if (heroTaglines) tl.to(heroTaglines, { y: 0, opacity: 1, duration: 0.5 }, 0.7);
+        if (heroActions) tl.to(heroActions, { y: 0, opacity: 1, duration: 0.5 }, 0.9);
+        if (heroScroll) tl.to(heroScroll, { opacity: 1, duration: 0.4 }, 1.2);
+      } else {
+        // Reduced motion: show everything immediately
+        [heroTitle, heroSub, heroTaglines, heroActions, heroScroll].forEach(el => {
+          if (el) gsap.set(el, { opacity: 1 });
+        });
+      }
+    }
+
     if (prefersReducedMotion) {
-      // Skip all animations when user prefers reduced motion
       requestAnimationFrame(() => ScrollTrigger.refresh());
       return;
     }
 
-    const hero = document.querySelector("#hero");
-    if (!hero) return;
-
-    const heroMask = hero.querySelector(".hero-mask");
-    const mainTitle = hero.querySelector(".hero-main-title");
-    const stars = hero.querySelectorAll(".hero-star-icon");
-    const subTitle = hero.querySelector(".hero-sub-title");
-    const signature = hero.querySelector(".hero-signature");
-    const taglines = hero.querySelector(".hero-taglines");
-    const taglineP = taglines ? taglines.querySelectorAll("p") : [];
-
-    const tl = gsap.timeline({ defaults: { ease: "power3.out" } });
-
-    gsap.set(mainTitle, { scaleX: 1.4, scaleY: 0.25, opacity: 0, y: -40 });
-    gsap.set(subTitle, { x: -120, opacity: 0 });
-    gsap.set(signature, { opacity: 0, scale: 0.6, rotation: -8 });
-    stars.forEach((s) => gsap.set(s, { opacity: 0, scale: 0.3 }));
-    if (taglineP.length) gsap.set(taglineP, { opacity: 0, y: 24 });
-
-    if (heroMask) {
-      tl.to(heroMask, { y: "-100%", duration: 0.4, ease: "power4.inOut" }, 0);
-    }
-
-    tl.to(mainTitle, { scaleX: 1, scaleY: 1, opacity: 1, y: 0, duration: 0.6, ease: "power4.out" }, 0.15);
-    tl.to(stars, { opacity: 1, scale: 1, duration: 0.35, stagger: 0.1, ease: "power3.out" }, 0.4);
-    tl.to(subTitle, { x: 0, opacity: 1, duration: 0.5, ease: "power4.out" }, 0.55);
-    tl.to(signature, { opacity: 0.8, scale: 1, rotation: -3, duration: 0.4, ease: "power3.out" }, 0.8);
-    tl.to(taglineP, { opacity: 1, y: 0, duration: 0.6, stagger: 0.1, ease: "power3.out" }, 1.0);
-
+    /* ===== About Section ===== */
     ScrollTrigger.batch("[data-animate-about]", {
       start: "top 82%",
       toggleActions: "play none none none",
@@ -64,6 +67,7 @@ export default function useAnimations() {
       });
     }
 
+    /* ===== Projects Section ===== */
     ScrollTrigger.batch("[data-animate-project]", {
       start: "top 82%",
       toggleActions: "play none none none",
@@ -72,11 +76,8 @@ export default function useAnimations() {
       onEnter: (els) => {
         els.forEach((card) => {
           const img = card.querySelector("img");
-          const body = card.querySelector(".project-card-body");
           gsap.set(img, { clipPath: "inset(0 0 0 100%)", scale: 1.1 });
-          const ct = gsap.timeline();
-          ct.to(img, { clipPath: "inset(0 0 0 0%)", scale: 1, duration: 1.0, ease: "power4.out" });
-          if (body) ct.from(body.children, { y: 24, opacity: 0, duration: 0.5, stagger: 0.08, ease: "power3.out" }, 0.2);
+          gsap.to(img, { clipPath: "inset(0 0 0 0%)", scale: 1, duration: 1.0, ease: "power4.out" });
         });
       },
     });
@@ -89,11 +90,12 @@ export default function useAnimations() {
       });
     }
 
+    /* ===== Skills Section — scale + stagger (varied from other sections) ===== */
     const skillsHeader = document.querySelector("#skills .skills-header");
     if (skillsHeader) {
       gsap.from(skillsHeader, {
         scrollTrigger: { trigger: skillsHeader, start: "top 85%", toggleActions: "play none none none" },
-        y: 60, opacity: 0, duration: 1.0, ease: "power4.out",
+        scale: 0.95, opacity: 0, duration: 0.8, ease: "power2.out",
       });
     }
 
@@ -102,15 +104,16 @@ export default function useAnimations() {
       toggleActions: "play none none none",
       interval: 0.1, batchMax: 4,
       onEnter: (els) => {
-        gsap.from(els, { y: 50, opacity: 0, scale: 0.95, duration: 0.7, stagger: 0.08, ease: "power3.out" });
+        gsap.from(els, { scale: 0.92, opacity: 0, duration: 0.6, stagger: 0.08, ease: "back.out(1.2)" });
       },
     });
 
+    /* ===== Contact Section — glass card slides in from right ===== */
     const contactLeft = document.querySelector("#contact .contact-left");
     if (contactLeft) {
       gsap.from(contactLeft.children, {
         scrollTrigger: { trigger: contactLeft, start: "top 82%", toggleActions: "play none none none" },
-        y: 50, opacity: 0, duration: 0.7, stagger: 0.12, ease: "power4.out",
+        y: 40, opacity: 0, duration: 0.7, stagger: 0.12, ease: "power4.out",
       });
     }
 
@@ -122,6 +125,7 @@ export default function useAnimations() {
       });
     }
 
+    /* ===== Navbar scroll effect ===== */
     const navbar = document.querySelector(".navbar");
     if (navbar) {
       gsap.from(navbar, {
@@ -136,7 +140,6 @@ export default function useAnimations() {
     requestAnimationFrame(() => ScrollTrigger.refresh());
 
     return () => {
-      tl.kill();
       ScrollTrigger.getAll().forEach((st) => st.kill());
     };
   }, []);

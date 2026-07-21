@@ -1,4 +1,17 @@
-﻿/* ===== Global Reset & Theme ===== */
+@import url('https://fonts.googleapis.com/css2?family=Archivo:wght@300;400;500;600;700&family=Space+Grotesk:wght@300;400;500;600;700&display=swap');
+
+/* ===== Reduced Motion ===== */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+/* ===== Global Reset & Theme ===== */
 *,
 *::before,
 *::after {
@@ -16,16 +29,20 @@
   --border-accent: rgba(204, 255, 0, 0.2);
 
   --text-primary: #f0f0f2;
-  --text-secondary: #888899;
-  --text-muted: #555566;
+  --text-secondary: #9BA1A6;
+  --text-muted: #6B7280;
 
   --accent: #CCFF00;
   --accent-dim: rgba(204, 255, 0, 0.15);
   --accent-glow: rgba(204, 255, 0, 0.08);
+  --accent-secondary: #00D4FF;
+  --accent-secondary-dim: rgba(0, 212, 255, 0.15);
   --gradient-1: linear-gradient(135deg, #CCFF00 0%, #7b2ff7 100%);
   --gradient-2: linear-gradient(135deg, rgba(204, 255, 0, 0.1), rgba(123, 47, 247, 0.1));
 
-  --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --font-heading: 'Archivo', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --font-body: 'Space Grotesk', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --font-sans: 'Space Grotesk', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
   --font-mono: 'SF Mono', 'Fira Code', monospace;
 
   --max-width: 1920px;
@@ -50,7 +67,7 @@ body {
   font-family: var(--font-sans);
   background: var(--bg-primary);
   color: var(--text-primary);
-  line-height: 1.6;
+  line-height: 1.75;
   overflow-x: hidden;
 }
 
@@ -73,9 +90,9 @@ body {
 
 /* ===== Container ===== */
 .container {
-  max-width: var(--max-width);
+  max-width: 1280px;
   margin: 0 auto;
-  padding: 0 400px;
+  padding: 0 32px;
 }
 
 /* ===== Section Common ===== */
@@ -100,6 +117,7 @@ body {
   line-height: 1.2;
   margin-bottom: 16px;
   color: var(--text-primary);
+  font-family: var(--font-heading);
 }
 
 .section-subtitle {
@@ -144,7 +162,7 @@ body {
 /* ===== Responsive ===== */
 @media (max-width: 1200px) {
   .container {
-    padding: 0 32px;
+    padding: 0 24px;
   }
   .section {
     padding: 80px 0;
@@ -156,7 +174,7 @@ body {
 
 @media (max-width: 768px) {
   .container {
-    padding: 0 20px;
+    padding: 0 16px;
   }
   .section {
     padding: 60px 0;

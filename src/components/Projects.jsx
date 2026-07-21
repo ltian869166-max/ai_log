@@ -1,138 +1,138 @@
-﻿import { useState, useRef } from 'react';
+import { useState, useRef } from 'react';
 import './Projects.css';
 
 const categories = [
-  '全部',
-  '数据大屏',
-  '视觉作品',
-  '图标设计',
-  '社交',
-  '游戏',
-  '移动端',
-  'PC端',
-  '平面品牌视觉设计',
+  'ȫ��',
+  '���ݴ���',
+  '�Ӿ���Ʒ',
+  'ͼ�����',
+  '�罻',
+  '��Ϸ',
+  '�ƶ���',
+  'PC��',
+  'ƽ��Ʒ���Ӿ����',
 ];
 
 const projects = [
   {
     id: 1,
-    category: '数据大屏',
-    title: 'BI工地监控数据大屏',
+    category: '���ݴ���',
+    title: 'BI���ؼ�����ݴ���',
     image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&q=80',
-    tags: ['数据可视化', '实时监控', '告警系统'],
+    tags: ['���ݿ��ӻ�', 'ʵʱ���', '�澯ϵͳ'],
   },
   {
     id: 2,
-    category: '数据大屏',
-    title: '智慧城市运营中心',
+    category: '���ݴ���',
+    title: '�ǻ۳�����Ӫ����',
     image: 'https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=800&q=80',
-    tags: ['城市数据', '3D地图', '实时大屏'],
+    tags: ['��������', '3D��ͼ', 'ʵʱ����'],
   },
   {
     id: 3,
-    category: '视觉作品',
-    title: '品牌视觉识别系统',
+    category: '�Ӿ���Ʒ',
+    title: 'Ʒ���Ӿ�ʶ��ϵͳ',
     image: 'https://images.unsplash.com/photo-1561070791-2526d30994b5?w=800&q=80',
-    tags: ['VI设计', '品牌规范', '视觉语言'],
+    tags: ['VI���', 'Ʒ�ƹ淶', '�Ӿ�����'],
   },
   {
     id: 4,
-    category: '视觉作品',
-    title: 'AI产品视觉探索',
+    category: '�Ӿ���Ʒ',
+    title: 'AI��Ʒ�Ӿ�̽��',
     image: 'https://images.unsplash.com/photo-1677442136019-21780ecad995?w=800&q=80',
-    tags: ['AI设计', '概念视觉', '风格探索'],
+    tags: ['AI���', '�����Ӿ�', '���̽��'],
   },
   {
     id: 5,
-    category: '图标设计',
-    title: '企业级图标库80+',
+    category: 'ͼ�����',
+    title: '��ҵ��ͼ���80+',
     image: 'https://images.unsplash.com/photo-1611162617213-7d7a39e9b1d7?w=800&q=80',
-    tags: ['图标系统', '组件库', '设计规范'],
+    tags: ['ͼ��ϵͳ', '�����', '��ƹ淶'],
   },
   {
     id: 6,
-    category: '图标设计',
-    title: '3D图标风格探索',
+    category: 'ͼ�����',
+    title: '3Dͼ����̽��',
     image: 'https://images.unsplash.com/photo-1620641788421-7a1c342ea42e?w=800&q=80',
-    tags: ['3D图标', '立体风格', '视觉实验'],
+    tags: ['3Dͼ��', '������', '�Ӿ�ʵ��'],
   },
   {
     id: 7,
-    category: '社交',
-    title: 'PERFECT RUN 运动社区',
+    category: '�罻',
+    title: 'PERFECT RUN �˶�����',
     image: 'https://images.unsplash.com/photo-1476480862126-209bfaa8edc8?w=800&q=80',
-    tags: ['社区设计', '社交互动', '运动健康'],
+    tags: ['�������', '�罻����', '�˶�����'],
   },
   {
     id: 8,
-    category: '社交',
-    title: '脱口秀社交平台',
+    category: '�罻',
+    title: '�ѿ����罻ƽ̨',
     image: 'https://images.unsplash.com/photo-1529156069898-49953e39b3ac?w=800&q=80',
-    tags: ['社交平台', '用户体验', '互动设计'],
+    tags: ['�罻ƽ̨', '�û�����', '�������'],
   },
   {
     id: 9,
-    category: '游戏',
-    title: '游戏社区App设计',
+    category: '��Ϸ',
+    title: '��Ϸ����App���',
     image: 'https://images.unsplash.com/photo-1538481199705-c710c4e965fc?w=800&q=80',
-    tags: ['游戏UI', '社区互动', '赛事系统'],
+    tags: ['��ϷUI', '��������', '����ϵͳ'],
   },
   {
     id: 10,
-    category: '游戏',
-    title: '闯关游戏H5活动',
+    category: '��Ϸ',
+    title: '������ϷH5�',
     image: 'https://images.unsplash.com/photo-1552820728-8b83bb6b2b6f?w=800&q=80',
-    tags: ['H5游戏', '活动设计', '增长转化'],
+    tags: ['H5��Ϸ', '����', '����ת��'],
   },
   {
     id: 11,
-    category: '移动端',
-    title: '计步运动健身App',
+    category: '�ƶ���',
+    title: '�Ʋ��˶�����App',
     image: 'https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?w=800&q=80',
-    tags: ['App设计', '数据可视化', '运动健康'],
+    tags: ['App���', '���ݿ��ӻ�', '�˶�����'],
   },
   {
     id: 12,
-    category: '移动端',
-    title: '能源行业协作App',
+    category: '�ƶ���',
+    title: '��Դ��ҵЭ��App',
     image: 'https://images.unsplash.com/photo-1517292987719-0369a794ec0f?w=800&q=80',
-    tags: ['企业协作', '移动端', '通讯工具'],
+    tags: ['��ҵЭ��', '�ƶ���', 'ͨѶ����'],
   },
   {
     id: 13,
-    category: 'PC端',
-    title: '招投标信息平台',
+    category: 'PC��',
+    title: '��Ͷ����Ϣƽ̨',
     image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&q=80',
-    tags: ['B端产品', '信息检索', '数据平台'],
+    tags: ['B�˲�Ʒ', '��Ϣ����', '����ƽ̨'],
   },
   {
     id: 14,
-    category: 'PC端',
-    title: '井讯通协作平台',
+    category: 'PC��',
+    title: '��ѶͨЭ��ƽ̨',
     image: 'https://images.unsplash.com/photo-1559136555-9303baea8ebd?w=800&q=80',
-    tags: ['企业通讯', '任务管理', '跨端设计'],
+    tags: ['��ҵͨѶ', '�������', '������'],
   },
   {
     id: 15,
-    category: '平面品牌视觉设计',
-    title: '品牌海报与物料系统',
+    category: 'ƽ��Ʒ���Ӿ����',
+    title: 'Ʒ�ƺ���������ϵͳ',
     image: 'https://images.unsplash.com/photo-1561070791-2526d30994b5?w=800&q=80',
-    tags: ['海报设计', '品牌物料', '视觉系统'],
+    tags: ['�������', 'Ʒ������', '�Ӿ�ϵͳ'],
   },
   {
     id: 16,
-    category: '平面品牌视觉设计',
-    title: 'Logo迭代与品牌升级',
+    category: 'ƽ��Ʒ���Ӿ����',
+    title: 'Logo������Ʒ������',
     image: 'https://images.unsplash.com/photo-1626785774573-4b799315345d?w=800&q=80',
-    tags: ['Logo设计', '品牌升级', '视觉识别'],
+    tags: ['Logo���', 'Ʒ������', '�Ӿ�ʶ��'],
   },
 ];
 
 export default function Projects() {
-  const [activeCategory, setActiveCategory] = useState('全部');
+  const [activeCategory, setActiveCategory] = useState('ȫ��');
   const gridRef = useRef(null);
 
-  const filteredProjects = activeCategory === '全部'
+  const filteredProjects = activeCategory === 'ȫ��'
     ? projects
     : projects.filter((p) => p.category === activeCategory);
 
@@ -141,7 +141,7 @@ export default function Projects() {
       <div className="container">
         <div className="projects-header">
           <div className="section-label">Selected Works</div>
-          <div className="section-title">精选项目</div>
+          <div className="section-title">��ѡ��Ŀ</div>
         </div>
 
         {/* Category Filter */}
@@ -149,8 +149,9 @@ export default function Projects() {
           {categories.map((cat) => (
             <button
               key={cat}
-              className={ilter-btn }
+              className={`filter-btn${activeCategory === cat ? " active" : ""}`}
               onClick={() => setActiveCategory(cat)}
+              aria-pressed={activeCategory === cat}
             >
               {cat}
             </button>
@@ -163,7 +164,8 @@ export default function Projects() {
             <div
               key={project.id}
               className="project-card"
-             data-animate-project
+              data-animate-project=""
+
               style={{ '--delay': `${index * 0.08}s` }}
            >
               <div className="project-card-image">

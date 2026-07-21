@@ -20,10 +20,9 @@
   height: 100%;
 }
 
-/* Left: Logo — with some breathing room from left edge */
+/* Left: Logo */
 .navbar-left {
   flex: 0 0 auto;
-  padding-left: 80px;
 }
 
 .navbar-logo {
@@ -31,7 +30,7 @@
   align-items: center;
   gap: 8px;
   padding: 6px 18px 6px 14px;
-  background: #CCFF00;
+  background: var(--accent);
   border-radius: 20px;
   text-decoration: none;
   transition: opacity 0.3s ease;
@@ -47,7 +46,7 @@
   justify-content: center;
   width: 22px;
   height: 22px;
-  color: #000000;
+  color: var(--bg-primary);
 }
 
 .navbar-avatar svg {
@@ -58,7 +57,7 @@
 .navbar-brand {
   font-size: 0.95rem;
   font-weight: 700;
-  color: #000000;
+  color: var(--bg-primary);
   letter-spacing: 1px;
   text-transform: uppercase;
 }
@@ -71,7 +70,7 @@
 }
 
 .navbar-center a {
-  color: #ffffff;
+  color: var(--text-primary);
   text-decoration: none;
   font-size: 0.875rem;
   font-weight: 400;
@@ -81,13 +80,15 @@
 }
 
 .navbar-center a:hover {
-  color: #CCFF00;
+  color: var(--accent);
 }
 
 /* Right: Contact Button */
 .navbar-right {
   flex: 0 0 auto;
-  padding-right: 80px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
 }
 
 .navbar-cta {
@@ -96,8 +97,8 @@
   gap: 6px;
   padding: 6px 16px;
   background: transparent;
-  border: 1px solid #ffffff;
-  color: #ffffff;
+  border: 1px solid var(--text-primary);
+  color: var(--text-primary);
   border-radius: 20px;
   font-size: 0.75rem;
   font-weight: 500;
@@ -110,8 +111,8 @@
 
 .navbar-cta:hover {
   background: rgba(255, 255, 255, 0.1);
-  border-color: #CCFF00;
-  color: #CCFF00;
+  border-color: var(--accent);
+  color: var(--accent);
 }
 
 /* ===== Responsive ===== */
@@ -119,11 +120,8 @@
   .navbar-center {
     display: none;
   }
-  .navbar-left {
-    padding-left: 24px;
-  }
   .navbar-right {
-    padding-right: 24px;
+    padding-right: 0;
   }
 }
 
@@ -146,7 +144,7 @@
   display: block;
   width: 100%;
   height: 2px;
-  background: #ffffff;
+  background: var(--text-primary);
   border-radius: 1px;
   transition: transform 0.3s ease, opacity 0.3s ease;
 }
@@ -190,7 +188,7 @@
 .navbar-mobile-link {
   font-size: 1.5rem;
   font-weight: 600;
-  color: #ffffff;
+  color: var(--text-primary);
   text-decoration: none;
   letter-spacing: 1px;
   transition: color 0.3s ease;

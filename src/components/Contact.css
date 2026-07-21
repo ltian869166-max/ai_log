@@ -7,7 +7,7 @@
   display: flex;
   align-items: center;
   overflow: hidden;
-  background: linear-gradient(160deg, #050505 0%, #0a0a0c 40%, #0e0e12 70%, #08080a 100%);
+  background: linear-gradient(160deg, #050505 0%, #0a0a0c 40%, var(--bg-secondary) 70%, var(--bg-primary) 100%);
 }
 
 /* ===== Background Ambient Glow ===== */
@@ -28,7 +28,7 @@
 .contact-bg-glow-1 {
   width: 600px;
   height: 600px;
-  background: radial-gradient(circle, #CCFF00 0%, transparent 70%);
+  background: radial-gradient(circle, var(--accent) 0%, transparent 70%);
   top: -15%;
   right: 30%;
   opacity: 0.1;
@@ -37,7 +37,7 @@
 .contact-bg-glow-2 {
   width: 500px;
   height: 500px;
-  background: radial-gradient(circle, #ffffff 0%, transparent 70%);
+  background: radial-gradient(circle, var(--text-primary) 0%, transparent 70%);
   bottom: -20%;
   left: 10%;
   opacity: 0.06;
@@ -81,7 +81,7 @@
   font-weight: 900;
   letter-spacing: -2px;
   line-height: 1.0;
-  color: #ffffff;
+  color: var(--text-primary);
   margin-bottom: 8px;
 }
 
@@ -89,18 +89,18 @@
   font-size: clamp(1.8rem, 3vw, 2.5rem);
   font-weight: 800;
   letter-spacing: 4px;
-  color: #ffffff;
+  color: var(--text-primary);
   margin-bottom: 24px;
 }
 
 .visual-accent {
-  color: #CCFF00;
+  color: var(--accent);
 }
 
 .contact-sub {
   font-size: 1rem;
   color: var(--text-secondary);
-  line-height: 1.6;
+  line-height: 1.8;
   margin-top: 4px;
 }
 
@@ -110,8 +110,8 @@
 
 .contact-badge {
   display: inline-block;
-  background: #CCFF00;
-  color: #000000;
+  background: var(--accent);
+  color: var(--bg-primary);
   font-size: 0.85rem;
   font-weight: 700;
   padding: 8px 24px;
@@ -131,7 +131,7 @@
   background: rgba(255, 255, 255, 0.03);
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
-  border: 1px solid rgba(255, 255, 255, 0.08);
+  border: 1px solid var(--border);
   border-radius: 20px;
   padding: 40px 36px;
   box-shadow:
@@ -141,7 +141,7 @@
 }
 
 .contact-glass-card:hover {
-  border-color: rgba(204, 255, 0, 0.2);
+  border-color: var(--border-accent);
   box-shadow:
     0 0 0 1px rgba(204, 255, 0, 0.08) inset,
     0 8px 48px rgba(0, 0, 0, 0.5),
@@ -152,13 +152,13 @@
   font-size: 1.8rem;
   font-weight: 800;
   letter-spacing: 6px;
-  color: #ffffff;
+  color: var(--text-primary);
   text-align: center;
   margin-bottom: 20px;
 }
 
 .glass-card-accent {
-  color: #CCFF00;
+  color: var(--accent);
 }
 
 .glass-card-divider {
@@ -190,7 +190,7 @@
 .glass-card-item-value {
   font-size: 0.95rem;
   font-weight: 600;
-  color: #ffffff;
+  color: var(--text-primary);
   letter-spacing: 0.5px;
 }
 
@@ -205,19 +205,20 @@
   gap: 8px;
   width: 100%;
   padding: 12px 24px;
-  background: rgba(204, 255, 0, 0.08);
-  border: 1px solid rgba(204, 255, 0, 0.2);
+  background: var(--accent-glow);
+  border: 1px solid var(--border-accent);
   border-radius: 12px;
-  color: #CCFF00;
+  color: var(--accent);
   font-size: 0.85rem;
   font-weight: 600;
   text-decoration: none;
+  cursor: pointer;
   transition: all 0.3s ease;
 }
 
 .glass-card-btn:hover {
-  background: rgba(204, 255, 0, 0.15);
-  border-color: #CCFF00;
+  background: var(--accent-dim);
+  border-color: var(--accent);
   transform: translateY(-1px);
 }
 

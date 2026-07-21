@@ -95,6 +95,20 @@ body {
   padding: 0 32px;
 }
 
+/* ===== Focus Visible (a11y) ===== */
+*:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+/* ===== Cursor ===== */
+a,
+button,
+[role="button"],
+.cursor-pointer {
+  cursor: pointer;
+}
+
 /* ===== Section Common ===== */
 .section {
   padding: 120px 0;

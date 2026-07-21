@@ -1,6 +1,7 @@
 ﻿import './Skills.css';
 import skillSphereImg from '../assets/skill-sphere.png';
 import skillGridImg from '../assets/skill-grid.png';
+import skillLayersImg from '../assets/skill-layers.png';
 
 const skills = [
   {
@@ -25,6 +26,7 @@ const skills = [
     title: '跨端设计经验',
     desc: '覆盖PC端、移动端、数据大屏等多端设计场景，具备复杂信息架构梳理和多端一致性把控能力。',
     shape: 'layers',
+    image: skillLayersImg,
   },
   {
     num: '04',

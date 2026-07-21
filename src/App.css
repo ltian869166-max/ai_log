@@ -1,0 +1,128 @@
+﻿/* ===== Navbar ===== */
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  height: var(--nav-height);
+  background: rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  transition: background 0.3s ease;
+}
+
+.navbar .container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 100%;
+}
+
+/* Left: Logo — with some breathing room from left edge */
+.navbar-left {
+  flex: 0 0 auto;
+  padding-left: 80px;
+}
+
+.navbar-logo {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 18px 6px 14px;
+  background: #CCFF00;
+  border-radius: 20px;
+  text-decoration: none;
+  transition: opacity 0.3s ease;
+}
+
+.navbar-logo:hover {
+  opacity: 0.85;
+}
+
+.navbar-avatar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 22px;
+  height: 22px;
+  color: #000000;
+}
+
+.navbar-avatar svg {
+  width: 18px;
+  height: 18px;
+}
+
+.navbar-brand {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: #000000;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+/* Center: Nav Links */
+.navbar-center {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+}
+
+.navbar-center a {
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 0.875rem;
+  font-weight: 400;
+  letter-spacing: 0.5px;
+  transition: color 0.3s ease;
+  position: relative;
+}
+
+.navbar-center a:hover {
+  color: #CCFF00;
+}
+
+/* Right: Contact Button */
+.navbar-right {
+  flex: 0 0 auto;
+  padding-right: 80px;
+}
+
+.navbar-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 16px;
+  background: transparent;
+  border: 1px solid #ffffff;
+  color: #ffffff;
+  border-radius: 20px;
+  font-size: 0.75rem;
+  font-weight: 500;
+  letter-spacing: 1px;
+  text-decoration: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-family: var(--font-sans);
+}
+
+.navbar-cta:hover {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: #CCFF00;
+  color: #CCFF00;
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 768px) {
+  .navbar-center {
+    display: none;
+  }
+  .navbar-left {
+    padding-left: 24px;
+  }
+  .navbar-right {
+    padding-right: 24px;
+  }
+}

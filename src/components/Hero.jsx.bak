@@ -1,0 +1,83 @@
+import './Hero.css';
+
+const cardItems = [
+  { label: '?? 甜点蛋糕', color: '#ff9ecf' },
+  { label: '?? 卡通角色', color: '#7ec8e3' },
+  { label: '?? 香水美妆', color: '#88d8a8' },
+  { label: '? 暖光香水', color: '#e8a87c' },
+  { label: '?? 城市景观', color: '#95b8d1' },
+  { label: '?? 室内桌面', color: '#c9b99a' },
+  { label: '?? 数字积木', color: '#d4a5e0' },
+  { label: '?? 吉他乐器', color: '#f7b731' },
+  { label: '?? 粉色系', color: '#f5a0b0' },
+];
+
+export default function Hero() {
+  return (
+    <section id="hero" className="hero-section">
+      {/* Background: 3D scene placeholder */}
+      <div className="hero-bg">
+        <div className="hero-night-sky" />
+        <div className="hero-moon" />
+        {/* Stars */}
+        {[...Array(20)].map((_, i) => (
+          <div
+            key={i}
+            className="hero-star"
+            style={{
+              left: `${10 + Math.random() * 80}%`,
+              top: `${5 + Math.random() * 40}%`,
+              width: `${1 + Math.random() * 2}px`,
+              height: `${1 + Math.random() * 2}px`,
+              animationDelay: `${Math.random() * 3}s`,
+              opacity: 0.3 + Math.random() * 0.5,
+            }}
+          />
+        ))}
+        {/* Decorative clouds */}
+        <div className="hero-cloud hero-cloud-1" />
+        <div className="hero-cloud hero-cloud-2" />
+        <div className="hero-cloud hero-cloud-3" />
+        {/* Cabin warm glow */}
+        <div className="hero-cabin-glow" />
+      </div>
+
+      {/* Dark overlay for readability */}
+      <div className="hero-overlay" />
+
+      {/* Main content - positioned top-left area */}
+      <div className="hero-content">
+        <div className="hero-title-group">
+          <div className="hero-title-row">
+            <h1 className="hero-main-title">LINTIAN</h1>
+            <div className="hero-stars">
+              <span className="hero-star-icon hero-star-lg">?</span>
+              <span className="hero-star-icon hero-star-sm">?</span>
+            </div>
+          </div>
+          <h2 className="hero-sub-title">PORTFOLIO</h2>
+          <div className="hero-signature-row">
+            <span className="hero-signature">LinT</span>
+          </div>
+        </div>
+
+        <div className="hero-taglines">
+          <p>用视觉系统与 AI 工作流</p>
+          <p>让品牌内容更快、更准、更有辨识度</p>
+        </div>
+      </div>
+
+      {/* Bottom card gallery */}
+      <div className="hero-cards-section">
+        <div className="hero-cards-track">
+          {cardItems.map((card, i) => (
+            <div key={i} className="hero-card" style={{ backgroundColor: card.color }}>
+              <span className="hero-card-label">{card.label}</span>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+

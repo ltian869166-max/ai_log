@@ -1,0 +1,359 @@
+﻿/* ===== About / 个人经历 Section ===== */
+.about-section {
+  padding: 100px 0 120px;
+  position: relative;
+  background: var(--bg-primary);
+}
+
+/* ===== Title Area ===== */
+.about-title-area {
+  margin-bottom: 60px;
+}
+
+.about-title-row {
+  display: flex;
+  align-items: flex-end;
+  gap: 12px;
+  margin-bottom: 8px;
+}
+
+.about-main-title {
+  font-size: clamp(2rem, 4vw, 52px);
+  font-weight: 700;
+  letter-spacing: -1px;
+  line-height: 1.05;
+  color: #ffffff;
+  text-transform: uppercase;
+}
+
+.about-title-arrow {
+  font-size: clamp(1.2rem, 2vw, 1.8rem);
+  color: #CCFF00;
+  line-height: 1;
+  margin-bottom: 4px;
+}
+
+.about-title-sub {
+  font-size: 0.9rem;
+  color: #888899;
+  letter-spacing: 2px;
+  font-weight: 400;
+}
+
+/* ===== Left-Right Split ===== */
+.about-content-split {
+  display: flex;
+  gap: 60px;
+  align-items: flex-start;
+  margin-bottom: 80px;
+}
+
+/* ===== Left: Character Card ===== */
+.about-character-card {
+  flex: 0 0 38%;
+  position: relative;
+  border-radius: 24px;
+  overflow: hidden;
+  background: linear-gradient(160deg, #1c1c28 0%, #12121a 100%);
+  aspect-ratio: 1 / 1.25;
+  display: flex;
+  align-items: flex-end;
+}
+
+.about-character-img {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 5%;
+}
+
+.about-character-img svg {
+  width: 100%;
+  height: 100%;
+}
+
+.about-character-tag {
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  background: #CCFF00;
+  color: #000;
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  padding: 6px 16px;
+  border-radius: 20px;
+  white-space: nowrap;
+}
+
+/* ===== Right: Personal Info ===== */
+.about-personal-info {
+  flex: 1;
+  min-width: 0;
+}
+
+.about-info-label {
+  display: inline-block;
+  font-size: 0.65rem;
+  font-weight: 600;
+  letter-spacing: 3px;
+  color: #CCFF00;
+  text-transform: uppercase;
+  margin-bottom: 12px;
+}
+
+.about-info-name {
+  font-size: clamp(1.5rem, 3vw, 2.5rem);
+  font-weight: 700;
+  color: #ffffff;
+  letter-spacing: -0.5px;
+  line-height: 1.15;
+  margin-bottom: 16px;
+}
+
+.about-info-bio {
+  font-size: 0.85rem;
+  color: #888899;
+  line-height: 1.7;
+  letter-spacing: 0.3px;
+  margin-bottom: 32px;
+  max-width: 560px;
+}
+
+/* ===== Info Grid (2-column) ===== */
+.about-info-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  margin-bottom: 36px;
+}
+
+.about-info-cell {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.about-cell-label {
+  font-size: 0.6rem;
+  font-weight: 600;
+  letter-spacing: 2px;
+  color: #CCFF00;
+  text-transform: uppercase;
+}
+
+.about-cell-value {
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: #e0e0e4;
+  letter-spacing: 0.3px;
+}
+
+/* ===== Stats Row (3-column) ===== */
+.about-stats-row {
+  display: flex;
+  gap: 48px;
+}
+
+.about-stat-block {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.about-stat-num {
+  font-size: clamp(1.5rem, 2.5vw, 2.25rem);
+  font-weight: 700;
+  color: #CCFF00;
+  letter-spacing: -1px;
+  line-height: 1;
+}
+
+.about-stat-lbl {
+  font-size: 0.65rem;
+  color: #888899;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+/* ===== Timeline Section ===== */
+.about-timeline-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  padding-top: 16px;
+}
+
+.about-tl-label-left {
+  font-size: 0.75rem;
+  color: #888899;
+  letter-spacing: 4px;
+  font-weight: 500;
+  text-transform: uppercase;
+}
+
+.about-tl-label-right {
+  font-size: 0.85rem;
+  color: #888899;
+  letter-spacing: 2px;
+  font-weight: 400;
+}
+
+/* ===== Horizontal Timeline ===== */
+.about-timeline {
+  position: relative;
+  padding-top: 30px;
+}
+
+/* Row containing the node columns side by side */
+.about-tl-nodes-row {
+  display: flex;
+  gap: 48px;
+  position: relative;
+}
+
+/* Each timeline node column */
+.about-tl-node-col {
+  flex: 1;
+  position: relative;
+}
+
+/* Marker (cross/star) centered above the card */
+.about-tl-node-marker {
+  position: absolute;
+  top: -22px;
+  left: 24px;
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1rem;
+  color: #CCFF00;
+  background: #08080a;
+  border-radius: 50%;
+  z-index: 2;
+}
+
+/* Card styling */
+.about-tl-node-card {
+  background: rgba(18, 18, 22, 0.8);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 16px;
+  padding: 28px 28px 24px;
+  transition: border-color 0.3s ease, background 0.3s ease;
+}
+
+.about-tl-node-card:hover {
+  border-color: rgba(204, 255, 0, 0.15);
+  background: rgba(22, 22, 28, 0.9);
+}
+
+.about-tl-date {
+  display: block;
+  font-size: 0.75rem;
+  color: #CCFF00;
+  letter-spacing: 1px;
+  font-feature-settings: "tnum";
+  margin-bottom: 8px;
+}
+
+.about-tl-company {
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: #ffffff;
+  letter-spacing: 0.5px;
+  margin-bottom: 8px;
+}
+
+.about-tl-role-tag {
+  display: inline-block;
+  font-size: 0.7rem;
+  font-weight: 500;
+  color: #CCFF00;
+  border: 1px solid rgba(204, 255, 0, 0.4);
+  padding: 3px 14px;
+  border-radius: 16px;
+  letter-spacing: 0.5px;
+  margin-bottom: 14px;
+}
+
+.about-tl-desc {
+  font-size: 0.85rem;
+  color: #888899;
+  line-height: 1.8;
+  letter-spacing: 0.3px;
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 1024px) {
+  .about-content-split {
+    flex-direction: column;
+    gap: 40px;
+  }
+  .about-character-card {
+    flex: none;
+    width: 100%;
+    max-width: 360px;
+    aspect-ratio: 1 / 1.25;
+  }
+  .about-stats-row {
+    gap: 32px;
+  }
+  .about-tl-nodes-row {
+    flex-direction: column;
+    gap: 32px;
+  }
+
+  .about-timeline {
+    padding-top: 0;
+  }
+  .about-tl-node-marker {
+    position: relative;
+    top: auto;
+    left: auto;
+    margin-bottom: 12px;
+  }
+}
+
+@media (max-width: 768px) {
+  .about-section {
+    padding: 60px 0 80px;
+  }
+  .about-title-area {
+    margin-bottom: 40px;
+  }
+  .about-main-title {
+    font-size: clamp(1.5rem, 8vw, 2rem);
+  }
+  .about-content-split {
+    gap: 32px;
+  }
+  .about-character-card {
+    max-width: 280px;
+  }
+  .about-info-bio {
+    font-size: 0.8rem;
+  }
+  .about-info-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+  .about-stats-row {
+    gap: 24px;
+  }
+  .about-stat-num {
+    font-size: 1.5rem;
+  }
+}
+
+.about-character-img .about-character-img-src {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+

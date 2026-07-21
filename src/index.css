@@ -67,7 +67,7 @@ body {
   font-family: var(--font-sans);
   background: var(--bg-primary);
   color: var(--text-primary);
-  line-height: 1.75;
+  line-height: 1.8;
   overflow-x: hidden;
 }
 

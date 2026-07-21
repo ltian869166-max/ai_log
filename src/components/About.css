@@ -215,16 +215,6 @@
   position: relative;
 }
 
-/* Horizontal timeline line */
-.about-tl-nodes-row::before {
-  content: "";
-  position: absolute;
-  top: -6px;
-  left: 40px;
-  right: 40px;
-  height: 1px;
-  background: linear-gradient(90deg, var(--accent-dim), var(--border), var(--accent-dim));
-}
 
 /* Each timeline node column */
 .about-tl-node-col {

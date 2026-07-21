@@ -213,6 +213,7 @@
   display: flex;
   gap: 48px;
   position: relative;
+  align-items: stretch;
 }
 
 
@@ -245,6 +246,7 @@
   border: 1px solid var(--border);
   border-radius: 16px;
   padding: 28px 28px 24px;
+  height: 100%;
   transition: border-color 0.3s ease, background 0.3s ease;
 }
 

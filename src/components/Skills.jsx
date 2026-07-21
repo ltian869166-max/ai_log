@@ -2,6 +2,7 @@
 import skillSphereImg from '../assets/skill-sphere.png';
 import skillGridImg from '../assets/skill-grid.png';
 import skillLayersImg from '../assets/skill-layers.png';
+import skillFluidImg from '../assets/skill-fluid.png';
 
 const skills = [
   {
@@ -34,6 +35,7 @@ const skills = [
     title: '用户界面设计',
     desc: '以用户为中心的设计方法论，专注B端C端产品界面设计，打造直觉化、高效的数字产品体验。',
     shape: 'fluid',
+    image: skillFluidImg,
   },
   {
     num: '05',

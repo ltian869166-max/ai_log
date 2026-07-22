@@ -35,8 +35,8 @@
   --accent: #00D4FF;
   --accent-dim: rgba(0, 212, 255, 0.15);
   --accent-glow: rgba(0, 212, 255, 0.08);
-  --accent-secondary: #00D4FF;
-  --accent-secondary-dim: rgba(0, 212, 255, 0.15);
+  --accent-secondary: #46ecd9;
+  --accent-secondary-dim: rgba(70, 236, 217, 0.15);
   --gradient-1: linear-gradient(135deg, #00D4FF 0%, #7b2ff7 100%);
   --gradient-2: linear-gradient(135deg, rgba(0, 212, 255, 0.1), rgba(123, 47, 247, 0.1));
 

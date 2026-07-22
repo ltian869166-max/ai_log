@@ -3,30 +3,51 @@
 export default function Hero() {
   return (
     <section id="hero" className="hero-section">
-      <div className="hero-bg" aria-hidden="true" />
+      {/* Decorative background elements */}
+      <div className="hero-decor" aria-hidden="true">
+        <div className="hero-decor-dot hero-decor-dot-1" />
+        <div className="hero-decor-dot hero-decor-dot-2" />
+        <div className="hero-decor-dot hero-decor-dot-3" />
+        <div className="hero-decor-line hero-decor-line-1" />
+        <div className="hero-decor-line hero-decor-line-2" />
+        <div className="hero-decor-glow" />
+      </div>
 
-      <div className="container hero-content">
-        <div className="hero-main-title" data-hero="title">
+      {/* Top bar */}
+      <div className="hero-top-bar">
+        <span className="hero-top-label">PORTFOLIO</span>
+        <span className="hero-top-year">2024 – 2026</span>
+      </div>
+
+      {/* Main content */}
+      <div className="hero-main">
+        <div className="hero-left">
+          <span className="hero-index">01</span>
+          <span className="hero-left-line" />
+        </div>
+        <div className="hero-center">
           <h1 className="hero-name">LINTIAN</h1>
-        </div>
-
-        <div className="hero-sub-title" data-hero="subtitle">
-          <span className="hero-role">UI Designer & AI Design</span>
-        </div>
-
-        <div className="hero-taglines" data-hero="taglines">
+          <div className="hero-role-row">
+            <span className="hero-role-text">UI Designer</span>
+            <span className="hero-role-sep" />
+            <span className="hero-role-text accent">AI Design</span>
+          </div>
           <p className="hero-tagline">视觉设计 · 品牌系统 · 智能交互</p>
         </div>
-
-        <div className="hero-actions" data-hero="actions">
-          <a href="#projects" className="hero-cta-primary">查看作品</a>
-          <a href="#contact" className="hero-cta-secondary">联系我</a>
+        <div className="hero-right">
+          <div className="hero-info-block">
+            <span className="hero-info-label">SERVICE</span>
+            <span className="hero-info-value">视觉设计</span>
+            <span className="hero-info-value">品牌体系</span>
+            <span className="hero-info-value">交互体验</span>
+          </div>
         </div>
+      </div>
 
-        <div className="hero-scroll-hint" data-hero="scroll">
-          <span className="hero-scroll-text">SCROLL</span>
-          <span className="hero-scroll-line" />
-        </div>
+      {/* Bottom bar */}
+      <div className="hero-bottom-bar">
+        <span className="hero-bottom-label">SCROLL</span>
+        <span className="hero-bottom-line" />
       </div>
     </section>
   );

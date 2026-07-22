@@ -32,9 +32,8 @@
 }
 
 .skill-card:hover {
-  border-color: var(--accent-dim);
-  background: var(--bg-card-hover);
-  transform: translateY(-2px);
+  background: #00D4FF;
+  border-color: rgba(0, 212, 255, 0.4);
 }
 
 .skill-card:active {
@@ -94,7 +93,7 @@
 }
 
 .skill-card:hover .skill-visual {
-  transform: scale(1.08);
+  opacity: 0;
 }
 
 /* ===== Image-based visual ===== */
@@ -418,6 +417,7 @@
   max-height: 120px;
   opacity: 1;
   margin-top: 16px;
+  color: #1A1A1A;
 }
 
 /* ===== Responsive ===== */
@@ -441,27 +441,20 @@
   transition: border-color 0.3s ease, background 0.4s ease;
 }
 
-.skill-card-brand:hover {
-  background: #00D4FF;
-  border-color: rgba(0, 212, 255, 0.4);
-}
-
-.skill-card-brand:hover .skill-title {
+.skill-card:hover .skill-title {
   color: #1A1A1A;
 }
 
-.skill-card-brand:hover .skill-num {
+.skill-card:hover .skill-num {
   background: rgba(0, 0, 0, 0.12);
   color: #1A1A1A;
 }
 
-.skill-card-brand:hover .skill-tag {
+.skill-card:hover .skill-tag {
   opacity: 0;
 }
 
-.skill-card-brand:hover .skill-visual {
-  opacity: 0;
-}
+
 
 /* ===== Staircase Capsule Tags ===== */
 .skill-tags-staircase {

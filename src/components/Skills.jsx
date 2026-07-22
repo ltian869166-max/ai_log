@@ -43,9 +43,13 @@ const skills = [
     num: '05',
     tag: 'SYSTEM',
     title: '品牌视觉设计',
-    desc: '建立完整的品牌视觉识别系统，涵盖Logo规范、品牌色彩体系和视觉传达设计。',
     shape: 'diamond',
     image: skillBrandImg,
+    tags: [
+      { text: '品牌识别系统梳理', color: 'white', rotate: -4 },
+      { text: '视觉规范与延展模板', color: 'dark', rotate: 3 },
+      { text: '统一多渠道传播质感', color: 'accent', rotate: -2 },
+    ],
   },
   {
     num: '06',
@@ -68,7 +72,7 @@ export default function Skills() {
 
         <div className="skills-grid">
           {skills.map((skill, index) => (
-            <div key={index} className="skill-card" data-shape={skill.shape}>
+            <div key={index} className={`skill-card${skill.tags ? ' skill-card-brand' : ''}`} data-shape={skill.shape}>
               <div className="skill-card-top">
                 <span className="skill-num">{skill.num}</span>
                 <span className="skill-tag">{skill.tag}</span>
@@ -81,7 +85,21 @@ export default function Skills() {
               ) : (
                 <div className={`skill-visual skill-visual-${skill.shape}`} aria-hidden="true" />
               )}
-              <p className="skill-desc">{skill.desc}</p>
+              {skill.tags ? (
+                <div className="skill-tags-staircase">
+                  {skill.tags.map((t, i) => (
+                    <span
+                      key={i}
+                      className={`skill-capsule skill-capsule-${t.color}`}
+                      style={{ transform: `rotate(${t.rotate}deg)`, marginLeft: i > 0 ? `${12 + i * 16}px` : '0' }}
+                    >
+                      {t.text}
+                    </span>
+                  ))}
+                </div>
+              ) : (
+                <p className="skill-desc">{skill.desc}</p>
+              )}
             </div>
           ))}
         </div>

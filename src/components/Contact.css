@@ -1,4 +1,4 @@
-/* ===== Contact Section ===== */
+ï»¿/* ===== Contact Section ===== */
 .contact-section {
   position: relative;
   width: 100%;
@@ -121,7 +121,7 @@
   letter-spacing: 1px;
 }
 
-/* ===== Right Side é–?Glass Card ===== */
+/* ===== Right Side ï¿½?Glass Card ===== */
 .contact-right {
   flex: 0 0 380px;
   display: flex;
@@ -145,9 +145,9 @@
 .contact-glass-card:hover {
   border-color: var(--border-accent);
   box-shadow:
-    0 0 0 1px rgba(204, 255, 0, 0.08) inset,
+    0 0 0 1px rgba(10, 85, 241, 0.08) inset,
     0 8px 48px rgba(0, 0, 0, 0.5),
-    0 0 60px rgba(204, 255, 0, 0.04);
+    0 0 60px rgba(10, 85, 241, 0.04);
 }
 
 .glass-card-title {

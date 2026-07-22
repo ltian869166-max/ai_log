@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Archivo:wght@300;400;500;600;700&family=Space+Grotesk:wght@300;400;500;600;700&display=swap');
+﻿@import url('https://fonts.googleapis.com/css2?family=Archivo:wght@300;400;500;600;700&family=Space+Grotesk:wght@300;400;500;600;700&display=swap');
 
 /* ===== Reduced Motion ===== */
 @media (prefers-reduced-motion: reduce) {
@@ -26,19 +26,19 @@
   --bg-card: #121216;
   --bg-card-hover: #1a1a22;
   --border: rgba(255, 255, 255, 0.06);
-  --border-accent: rgba(204, 255, 0, 0.2);
+  --border-accent: rgba(10, 85, 241, 0.2);
 
   --text-primary: #f0f0f2;
   --text-secondary: #A8AEB4;
   --text-muted: #8B9298;
 
-  --accent: #CCFF00;
-  --accent-dim: rgba(204, 255, 0, 0.15);
-  --accent-glow: rgba(204, 255, 0, 0.08);
+  --accent: #0a55f1;
+  --accent-dim: rgba(10, 85, 241, 0.15);
+  --accent-glow: rgba(10, 85, 241, 0.08);
   --accent-secondary: #00D4FF;
   --accent-secondary-dim: rgba(0, 212, 255, 0.15);
-  --gradient-1: linear-gradient(135deg, #CCFF00 0%, #7b2ff7 100%);
-  --gradient-2: linear-gradient(135deg, rgba(204, 255, 0, 0.1), rgba(123, 47, 247, 0.1));
+  --gradient-1: linear-gradient(135deg, #0a55f1 0%, #7b2ff7 100%);
+  --gradient-2: linear-gradient(135deg, rgba(10, 85, 241, 0.1), rgba(123, 47, 247, 0.1));
 
   --font-heading: 'Archivo', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
   --font-body: 'Space Grotesk', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;

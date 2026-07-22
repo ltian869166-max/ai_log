@@ -99,7 +99,7 @@
   font-size: 0.65rem;
   font-weight: 600;
   letter-spacing: 3px;
-  color: var(--accent-secondary);
+  color: rgba(70, 236, 217, 0.5);
   text-transform: uppercase;
   margin-bottom: 12px;
 }
@@ -140,7 +140,7 @@
   font-size: 0.6rem;
   font-weight: 600;
   letter-spacing: 2px;
-  color: var(--accent-secondary);
+  color: rgba(70, 236, 217, 0.5);
   text-transform: uppercase;
 }
 
@@ -263,7 +263,7 @@
 .about-tl-date {
   display: block;
   font-size: 0.75rem;
-  color: var(--accent-secondary);
+  color: #ffffff;
   letter-spacing: 1px;
   font-feature-settings: "tnum";
   margin-bottom: 8px;

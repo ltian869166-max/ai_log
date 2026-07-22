@@ -515,6 +515,6 @@
 
 /* Accent (semi-transparent yellow) capsule */
 .skill-capsule-accent {
-  background: rgba(204, 255, 0, 0.75);
+  background: #46ecd9;
   color: #1A1A1A;
 }

@@ -1,4 +1,4 @@
-import './Skills.css';
+﻿import './Skills.css';
 import skillSphereImg from '../assets/skill-sphere.png';
 import skillGridImg from '../assets/skill-grid.png';
 import skillLayersImg from '../assets/skill-layers.png';
@@ -103,14 +103,14 @@ export default function Skills() {
                   <img src={skill.image} alt="" />
                 </div>
               ) : (
-                <div className={skill-visual skill-visual-} aria-hidden="true" />
+                <div className={`skill-visual skill-visual-${skill.shape}`} aria-hidden="true" />
               )}
               <div className="skill-tags-staircase">
                 {skill.tags.map((t, i) => (
                   <span
                     key={i}
-                    className={skill-capsule skill-capsule-}
-                    style={{ transform: otate(deg) }}
+                    className={`skill-capsule skill-capsule-${t.color}`}
+                    style={{ transform: `rotate(${t.rotate}deg)` }}
                   >
                     {t.text}
                   </span>

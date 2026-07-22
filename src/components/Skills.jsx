@@ -1,4 +1,4 @@
-﻿import './Skills.css';
+import './Skills.css';
 import skillSphereImg from '../assets/skill-sphere.png';
 import skillGridImg from '../assets/skill-grid.png';
 import skillLayersImg from '../assets/skill-layers.png';

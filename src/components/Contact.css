@@ -267,3 +267,8 @@
     font-size: clamp(2.5rem, 10vw, 3.5rem);
   }
 }
+/* Center the split layout within the section */
+.contact-container .contact-split {
+  max-width: 960px;
+  margin: 0 auto;
+}
